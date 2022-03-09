@@ -1,0 +1,26 @@
+{
+    "todos":
+    [
+        {
+            "id":1,
+            "title":"Task Completion",
+            "body":"To complete the task within next week",
+            "date":"04/03/2022",
+            "created_at":"01/03/2022"
+        },
+        {
+            "id":2,
+            "title":"Marriage Function",
+            "body":"keerthi and Monish wedding celebration",
+            "date":"05/05/2022",
+            "created_at":"02/03/2022"
+        },
+        {
+            "id":3,
+            "title":"Project Meeting",
+            "body":"My 1st project at Zoho corp.",
+            "date":"07/02/2022",
+            "created_at":"02/01/2022"
+        }
+    ]
+}

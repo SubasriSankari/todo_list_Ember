@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col-md-4">
+        <LinkTo @route="todos.new" class="btn btn-success"> Create todo</LinkTo>
+        <hr>
+        {{outlet}}
+    </div>
+
+    <div class="col-md-8" id="todo">
+        <div class="row">
+            <div class="col-md-12">
+                <form class="form-inline">
+                    <div class="form-group">
+                        {{input type="text" class="form-control" id="search" placeholder="Filter Here..."}}
+                    </div>
+                    <button type="submit" class="btn btn-danger">Filter</button>
+                </form>
+            </div>
+        </div>
+
+        <hr><br>
+
+        {{#if filter}}
+        {{#each filterTodos as |value|}}
+        <div class="well">
+            <h5>
+                <LinkTo @route="todos.edit" @model={{value.id}}>{{value.title}}</LinkTo> at <span
+                    class="label label-primary pull-right">{{format-date value.date}} </span>
+            </h5>
+            {{value.body}}
+        </div>
+        <hr>
+        {{/each}}
+        {{else}}
+        {{#each sortedTodos as |value|}}
+        <div class="well">
+            <h5>
+                <LinkTo @route="todos.edit" @model={{value.id}}>{{value.title}}</LinkTo> at <span
+                    class="label label-primary pull-right">{{format-date value.date}} </span>
+            </h5>
+            {{value.body}}
+        </div>
+        <hr>
+        {{/each}}
+        {{/if}}
+
+    </div>
+</div>
